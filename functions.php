@@ -1,8 +1,38 @@
 <?php
 
-include (get_stylesheet_directory() . '/options.php');
-
 define ('MONOSPACE_CREDITS_URL', 'http://vinicius.soylocoporti.org.br/monospace-wordpress-theme/');
+define ('MONOSPACE_DEFAULT_ICON', 'box_icon&');
+
+include (get_stylesheet_directory() . '/options.php');
+load_theme_textdomain ('monospace2', get_template_directory().'/lang');
+
+register_sidebar(array(
+	'name'          => __('Left Menu', 'monospace'),
+	'id'            => 'menu-left',
+	'description'   => '',
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget'  => '</div>',
+	'before_title'  => '',
+	'after_title'   => ''
+));
+register_sidebar(array(
+	'name'          => __('Middle Menu', 'monospace2'),
+	'id'            => 'menu-middle',
+	'description'   => '',
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget'  => '</div>',
+	'before_title'  => '',
+	'after_title'   => ''
+));
+register_sidebar(array(
+	'name'          => __('Right Menu', 'monospace2'),
+	'id'            => 'menu-right',
+	'description'   => '',
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget'  => '</div>',
+	'before_title'  => '',
+	'after_title'   => ''
+));
 
 add_action('init', 'monospace_infinite_scroll');
 function monospace_infinite_scroll() {
@@ -112,12 +142,18 @@ function monospace_head() {
     $styles = array();
     $icons_base = get_stylesheet_directory_uri() . '/icon/';
     $categories = get_categories();
+    $sizes = array(16, 48);
     foreach ($categories as $c) {
+
         $cat_class = 'category-icon-' . $c->term_id;
-        if ($icon = of_get_option($cat_class)) {
-            $styles[] = '.' . $cat_class . ' { background-image:url("' . $icons_base . $icon . '48.png"); }';
-            $styles[] = '.' . $cat_class . ':hover { background-image:url("' . $icons_base . $icon . '48-hover.png"); }';
+        if (!$icon = of_get_option($cat_class))
+            $icon = MONOSPACE_DEFAULT_ICON;
+
+        foreach ($sizes as $s) {
+            $styles[] = '.' . $cat_class . '-' . $s . ' { background-image:url("' . $icons_base . $icon . $s . '.png"); }';
+            $styles[] = '.' . $cat_class . '-' . $s . ':hover { background-image:url("' . $icons_base . $icon . $s . '-hover.png"); }';
         }
+
     }
     ?>
     <style type="text/css"><?php echo implode("\r", $styles); ?></style>
@@ -125,9 +161,11 @@ function monospace_head() {
 }
 
 function monospace_get_icons() {
+
     $icons = array();
     $path = get_stylesheet_directory() . '/icon/';
     $dir = opendir($path);
+
     while ($file = readdir($dir)) {
 
         if (strpos($file, '16.png') === false)
@@ -145,48 +183,15 @@ function monospace_get_icons() {
     }
 
     usort($icons, 'monospace_get_icons_sort');
-
     return $icons;
 }
 
 function monospace_get_icons_sort($a, $b) {
-
     if ($a['file'] > $b['file'])
         return 1;
     else
         return -1;
-
 }
-
-load_theme_textdomain ('monospace2', get_template_directory().'/lang');
-
-register_sidebar(array(
-	'name'          => __('Left Menu', 'monospace'),
-	'id'            => 'menu-left',
-	'description'   => '',
-	'before_widget' => '<div id="%1$s" class="widget %2$s">',
-	'after_widget'  => '</div>',
-	'before_title'  => '',
-	'after_title'   => ''
-));
-register_sidebar(array(
-	'name'          => __('Middle Menu', 'monospace2'),
-	'id'            => 'menu-middle',
-	'description'   => '',
-	'before_widget' => '<div id="%1$s" class="widget %2$s">',
-	'after_widget'  => '</div>',
-	'before_title'  => '',
-	'after_title'   => ''
-));
-register_sidebar(array(
-	'name'          => __('Right Menu', 'monospace2'),
-	'id'            => 'menu-right',
-	'description'   => '',
-	'before_widget' => '<div id="%1$s" class="widget %2$s">',
-	'after_widget'  => '</div>',
-	'before_title'  => '',
-	'after_title'   => ''
-));
 
 function monospace_meta () {
     global $post;
@@ -197,7 +202,11 @@ function monospace_meta () {
 
         <a class="icon16 comment-icon12" href="<?php comments_link(); ?>"><?php comments_number('0', '1', '%'); ?></a>
 
-        <?php if ($categories) : ?><span class="categories icon12 categories-icon12"><?php the_category(' '); ?></span><?php endif; ?>
+        <?php if ($categories) : ?>
+            <?php foreach ($categories as $c) : ?>
+                <a class="categories icon16 category-icon-<?php echo $c->term_id; ?>-16" href="<?php echo get_category_link($c->term_id); ?>"><?php echo $c->name; ?></a>
+            <?php endforeach; ?>
+        <?php endif; ?>
         <?php if ($tags) : ?><span class="tags icon12 tags-icon12"><?php the_tags('', ''); ?></span><?php endif; ?>
 
         <?php edit_post_link(); ?>
@@ -208,15 +217,12 @@ function monospace_meta () {
 
 add_action('monospace_post_loaded', 'monospace_run_post_js');
 function monospace_run_post_js($args) {
-
     $defaults = array(
         'post_id' => false
     );
     $args = wp_parse_args($args, $defaults);
-
     if (!$args['post_id'])
         return false;
-
     ?>
     <script type="text/javascript">
         format_post('.post-<?php echo $args['post_id']; ?>');

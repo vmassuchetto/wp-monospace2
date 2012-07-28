@@ -19,6 +19,7 @@ h1, h2, h3, h4, h5, h6 { margin:0; padding:0; line-height:1.1em; font-weight:nor
 h4, h5, h6 { font-size:14px; }
 p { margin:15px 0; }
 blockquote { margin:15px; border:1px solid #EAEAEA; line-height:1.2em; border-radius:5px; background:#FAFAFA; padding:10px; }
+p > code { background-color: #FAFAFA; border: 1px solid #CCCCCC; display: inline; margin: 0; padding: 1px 3px; border-radius:3px; }
 blockquote cite { display:block; padding:10px 20px 0 0; text-align:right; }
 input, textarea { padding:10px; border-radius:3px; border:1px solid #CCCCCC; background:#F8F8F8; }
 input:hover, textarea:hover { border:1px solid #999999; background:#F0F0F0; border-radius:3px; }
@@ -164,7 +165,7 @@ input:hover, textarea:hover { border:1px solid #999999; background:#F0F0F0; bord
 .related { margin:20px 0 0 0; }
 .nav { margin:10px 0; text-align:center; }
 
-h4#comments { background:transparent url('img/comments-icon24.png') no-repeat 0 center; margin-top:40px; padding:0 0 0 38px; line-height:24px; font-size:16px; }
+h3#comments { background:transparent url('img/comments-icon24.png') no-repeat 0 center; margin-top:40px; padding:0 0 0 38px; line-height:24px; font-size:16px; }
 .commentlist li { list-style-type:none; z-index:3; border-radius:5px; border:1px solid #EAEAEA; padding:10px; margin:20px 0 0 0; position:relative; }
 .commentlist li.even,
 .commentlist li.even .fn { background:#FAFAFA; }
@@ -173,12 +174,12 @@ h4#comments { background:transparent url('img/comments-icon24.png') no-repeat 0 
 .comment .comment-body { padding:0 0 0 60px; }
 .comment .says,
 .pingback .says { display:none; }
-.comment .comment-meta { margin:0 0 10px 0; font-size:12px; line-height:18px; }
+.comment .comment-meta { margin:0 0 7px 0; font-size:12px; line-height:18px; }
 .comment .comment-meta a { color:#888888; }
 .comment .comment-author img { border-radius:5px; border:1px solid #C0C0C0; position:absolute; left:10px; top:10px; }
 .comment .comment-author cite { font-style:normal; float:left; line-height:18px; margin:0 5px 0 0; }
 .pingback .comment-author cite { font-style:normal; }
-.comment p { margin:0 0 15px 0; }
+.comment p { margin:0 0 10px 0; }
 ul.commentlist ul.children { padding-left:10px; }
 .form-section { margin:10px 0; text-align:right; }
 .form-section div { display:inline; }

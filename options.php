@@ -36,8 +36,6 @@ function optionsframework_options() {
         'name' => __('Style & Appearance', 'monospace2'),
         'type' => 'heading');
 
-
-
     $options[] = array(
         'name' => __('Category Icons', 'monospace2'),
         'type' => 'heading');
@@ -47,7 +45,7 @@ function optionsframework_options() {
         $options[] = array(
             'name'    => '&nbsp;' . $c->name,
             'id'      => $class,
-            'type'    => 'text'
+            'type'    => 'text',
         );
     }
 

@@ -4,7 +4,7 @@
         <?php $c = monospace_post_category(get_the_ID()); ?>
         <a title="<?php printf(__('Link to the category $1', 'monospace2'), $c->name); ?>"
             href="<?php echo get_category_link($c->term_id); ?>"
-            class="category-icon-<?php echo $c->term_id; ?>">
+            class="category-icon-<?php echo $c->term_id; ?>-48">
         </a>
     </div>
 
