@@ -134,6 +134,8 @@ input:hover, textarea:hover { border:1px solid #999999; background:#F0F0F0; bord
 .thumbnail { margin:0; padding:0; }
 .thumbnail img { float:right; }
 
+h2.category-hidden { display:none; }
+
 .entry { line-height:1.6em; padding:0 10px; position:relative; }
 .entry a.link-internal-icon12,
 .entry a.content-anchor { background-image:url('img/link-internal-icon12.png'); }

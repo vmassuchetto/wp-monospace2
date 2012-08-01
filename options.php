@@ -26,15 +26,28 @@ function optionsframework_options() {
 
     global $wpdb;
 
-    $categories = get_categories();
+    $categories = get_categories(array('hide_empty' => false));
     $options = array();
     $icons_base = get_stylesheet_directory_uri() . '/icon/';
+
+    $categories_multicheck = array();
+    foreach ($categories as $c)
+        $categories_multicheck[$c->term_id] = '&nbsp;' . $c->name;
 
     /* Menu Style */
 
     $options[] = array(
         'name' => __('Style & Appearance', 'monospace2'),
         'type' => 'heading');
+
+    $options[] = array(
+        'name' => __('Disable Titles', 'monospace2'),
+        'desc' => __('You can disable titles for some categories that may not need it.', 'monospace2'),
+        'id' => 'show_category_title',
+        'std' => $categories_multicheck,
+        'type' => 'multicheck',
+        'options' => $categories_multicheck
+    );
 
     $options[] = array(
         'name' => __('Category Icons', 'monospace2'),
