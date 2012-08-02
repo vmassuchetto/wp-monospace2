@@ -34,6 +34,14 @@ register_sidebar(array(
 	'after_title'   => ''
 ));
 
+remove_filter( 'the_content', 'wpautop' );
+remove_filter( 'the_excerpt', 'wpautop' );
+add_filter('the_content', 'monospace_wpautop');
+add_filter('the_content', 'monospace_wpautop');
+function monospace_wpautop($content) {
+    return wpautop($content, false);
+}
+
 add_filter('the_content', 'monospace_ensure_oembed', 1);
 function monospace_ensure_oembed($content) {
     return preg_replace('/^\s*<[^>]*>(http.*)?<[^>]*>\s*$/im', '\1' . "\n", $content);
