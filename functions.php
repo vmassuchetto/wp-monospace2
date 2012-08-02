@@ -92,11 +92,10 @@ function monospace_post_category($post_id) {
 
 add_filter('post_class', 'monospace_category_class');
 function monospace_category_class($classes) {
-	global $post;
-	foreach((get_the_category($post->ID)) as $category) {
-	        $classes[] = $category->category_nicename;
-	        return $classes;
-	}
+    global $post;
+    foreach((get_the_category($post->ID)) as $category)
+        $classes[] = $category->category_nicename;
+    return $classes;
 }
 
 add_filter('the_content', 'monospace_format_content');
