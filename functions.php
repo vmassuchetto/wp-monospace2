@@ -84,9 +84,9 @@ function monospace_infinite_scroll() {
 }
 
 function monospace_post_category($post_id) {
-    $post_categories = wp_get_post_categories( $post_id );
-	if (count($post_categories) <= 0)
-        return false;
+    $post_categories = wp_get_post_categories($post_id);
+    if (count($post_categories) <= 0)
+        return get_category(get_option('default_category'));
     return get_category($post_categories[0]);
 }
 
