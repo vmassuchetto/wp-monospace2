@@ -15,24 +15,6 @@ function format_post(post) {
             jQuery(this).addClass('link-external-icon12');
     });
 
-    post.find('.entry img').each(function(){
-        p = jQuery(this).parents('p');
-        if (p.length <= 0)
-            return false;
-        p.css('text-align', 'center');
-    });
-
-    post.find('.entry iframe').each(function(){
-        p = jQuery(this).parents('p');
-        if (p.length <= 0) {
-            i = jQuery('<div>').append(jQuery(this).clone()).html();
-            p = jQuery('<p>');
-            p.append(i);
-            jQuery(this).replaceWith(p);
-        }
-        p.css('text-align', 'center');
-    });
-
 }
 
 jQuery(document).ready(function() {
