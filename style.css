@@ -106,9 +106,14 @@ input:hover, textarea:hover { border:1px solid #999999; background:#F0F0F0; bord
 .meta { font-size:0.9em; margin:10px; clear:both; }
 .meta span { display:normal; }
 .meta span.share a { display:inline-block; margin:0 5px 0 0; }
+.meta .icon12 { margin:0 4px 0 0; }
 
+.link-internal-icon12 { padding:2px 2px 2px 18px; background-image:url('img/link-internal-icon12.png'); }
+.link-internal-icon12:hover { padding:2px 2px 2px 18px; background-image:url('img/link-internal-icon12-hover.png'); }
 .author-icon12 { background-image:url('img/author-icon12.png'); }
 .date-icon12 { background-image:url('img/date-icon12.png'); }
+.star-icon12 { background-image:url('img/star-icon12.png'); }
+.star-icon12:hover { background-image:url('img/star-icon12-hover.png'); }
 .comment-icon12 { background-image:url('img/comment-icon12.png'); }
 .comment-icon12:hover { background-image:url('img/comment-icon12-hover.png'); }
 .categories-icon12 { background-image:url('img/categories-icon12.png'); }
@@ -130,6 +135,9 @@ input:hover, textarea:hover { border:1px solid #999999; background:#F0F0F0; bord
 .google-icon16:hover { background-image:url('img/google-icon16-hover.png'); }
 .share-icon16 { background-image:url('img/share-icon16.png'); }
 .share-icon16:hover { background-image:url('img/share-icon16-hover.png'); }
+
+.share { display:none; margin:10px 0; }
+.share a { padding:0; margin:0; }
 
 .thumbnail { margin:0; padding:0; }
 .thumbnail img { float:right; }
