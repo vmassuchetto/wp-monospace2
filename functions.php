@@ -42,11 +42,6 @@ function monospace_wpautop($content) {
     return wpautop($content, false);
 }
 
-add_filter('the_content', 'monospace_ensure_oembed', 1);
-function monospace_ensure_oembed($content) {
-    return preg_replace('/^\s*<[^>]*>(http.*)<[^>]*>\s*$/im', '\1' . "\n", $content);
-}
-
 add_action('init', 'monospace_infinite_scroll');
 function monospace_infinite_scroll() {
 
