@@ -1,3 +1,14 @@
+function center_element(e) {
+
+    p = jQuery(e).parents('p');
+    if (p.length <= 0)
+        return false;
+
+    if (p.siblings('p').length > 1)
+        p.css('text-align', 'center');
+
+}
+
 function format_post(post) {
 
     post = jQuery(post);
