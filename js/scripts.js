@@ -26,6 +26,10 @@ function format_post(post) {
             jQuery(this).addClass('link-external-icon12');
     });
 
+    post.find('img').each(function(){
+        center_element(this);
+    });
+
 }
 
 jQuery(document).ready(function() {
