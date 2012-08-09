@@ -140,6 +140,7 @@ function monospace_enqueue_scripts() {
     wp_enqueue_script('jquery');
     wp_enqueue_script('jquery-jcarousel', get_stylesheet_directory_uri() . '/js/jquery.jcarousel.min.js', array('jquery'));
     wp_enqueue_script('monospace-scripts', get_stylesheet_directory_uri() . '/js/scripts.js', array('jquery', 'jquery-jcarousel'));
+    wp_enqueue_script('addthis', 'http://s7.addthis.com/js/250/addthis_widget.js', false, false, true);
     $params = monospace_scroll_params();
     wp_localize_script('monospace-scripts', 'params', $params);
 }
@@ -207,6 +208,7 @@ function monospace_meta () {
     ?>
     <div class="meta">
 
+        <a class="icon16 star-icon12 share-button" rel="<?php echo $post->ID; ?>" href="#"><?php _e('Share', 'monospace2'); ?></a>
         <a class="icon16 comment-icon12" href="<?php comments_link(); ?>"><?php comments_number('0', '1', '%'); ?></a>
 
         <?php if ($categories) : ?>
@@ -217,6 +219,20 @@ function monospace_meta () {
         <?php if ($tags) : ?><span class="tags icon12 tags-icon12"><?php the_tags('', ''); ?></span><?php endif; ?>
 
         <?php edit_post_link(); ?>
+        <a class="icon16 link-internal-icon12" href="<?php echo get_permalink($post->ID); ?>"></a>
+
+        <?php $addthis = 'addthis:url="' . get_permalink($post->ID) . '" addthis:title="' . get_the_title($post->ID) . '"'; ?>
+        <div class="share">
+            <div class="addthis_toolbox addthis_default_style">
+                <a <?php echo $addthis; ?> class="addthis_button_preferred_1"></a>
+                <a <?php echo $addthis; ?> class="addthis_button_preferred_2"></a>
+                <a <?php echo $addthis; ?> class="addthis_button_preferred_3"></a>
+                <a <?php echo $addthis; ?> class="addthis_button_preferred_4"></a>
+                <a <?php echo $addthis; ?> class="addthis_button_compact"></a>
+            </div>
+            <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+            <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-5021cd7a49db1f38"></script>
+        </div>
 
     </div>
     <?php

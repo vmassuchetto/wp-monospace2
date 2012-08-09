@@ -30,6 +30,12 @@ function format_post(post) {
         center_element(this);
     });
 
+    post.find('.share-button').click(function(e){
+        e.preventDefault();
+        post_id = jQuery(this).attr('rel');
+        jQuery('#post-' + post_id).find('.share').slideDown(200);
+    });
+
 }
 
 jQuery(document).ready(function() {
