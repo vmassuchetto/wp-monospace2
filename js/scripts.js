@@ -70,16 +70,17 @@ jQuery(document).ready(function() {
     jQuery('.menu-categories').jcarousel({
         'animation': 'slow',
         'wrap': 'circular',
+        'itemFallbackDimension': 110
     });
     jQuery('.menu-tags').jcarousel({
         'animation': 'slow',
         'wrap': 'circular',
-        'scroll': 6,
+        'scroll': 5,
         'setupCallback': function(carousel) {
             jQuery('.menu-tags a').each(function(){
                 item = jQuery(this);
                 w = item.css('font-size').replace('px', '')
-                    * item.html().length * 0.7;
+                    * item.html().length * 0.6;
                 item.parent().css('width', w + 'px');
             });
         }

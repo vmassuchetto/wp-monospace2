@@ -22,5 +22,5 @@
 </div>
 
 <div class="menu-tags">
-    <?php wp_tag_cloud(array('smallest' => 10, 'largest' => 32, 'unit' => 'px', 'format' => 'list')); ?>
+    <?php wp_tag_cloud(array('smallest' => 12, 'largest' => 28, 'unit' => 'px', 'format' => 'list')); ?>
 </div>
