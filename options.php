@@ -50,6 +50,16 @@ function optionsframework_options() {
     );
 
     $options[] = array(
+        'name' => __('Share Buttons', 'monospace2'),
+        'desc' => __('Put here the HTML code for the share buttons that will pop when '
+            . 'the "share" link on posts metadata section is clicked. '
+            . 'By default this is an AddThis entry.'),
+        'id' => 'show_category_title',
+        'std' => false,
+        'type' => 'textarea',
+    );
+
+    $options[] = array(
         'name' => __('Category Icons', 'monospace2'),
         'type' => 'heading');
 
