@@ -15,7 +15,7 @@ class WidgetCategoryCarousel extends WP_Widget {
                 <?php foreach (get_categories() as $category) : ?>
                     <?php
                         $class = 'category-icon-' . $category->term_id . '-48';
-                        $title = sprintf(__('Link to the category $1', 'monospace2'), $category->name);
+                        $title = __('Link to the category', 'monospace2') . ' ' . $category->name;
                     ?>
                     <li class="menu-item menu-item-category-<?php echo $category->slug; ?>">
                         <a class="menu-item-icon icon48 <?php echo $class; ?>"

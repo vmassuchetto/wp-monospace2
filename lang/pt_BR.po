@@ -1,0 +1,249 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Monospace\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-08-11 19:45-0300\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Vinicius Massuchetto <viniciusmassuchetto@gmail.com>\n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../monospace2/widgets.php:6
+msgid "Category carousel with icons"
+msgstr "Carrossel de categorias com ícones"
+
+#: ../monospace2/widgets.php:7
+msgid "Monospace2: Category Carousel"
+msgstr "Monospace2: Carrossel de Categorias"
+
+#: ../monospace2/widgets.php:18
+#: ../monospace2/functions.php:240
+#: ../monospace2/post.php:11
+msgid "Link to the category"
+msgstr "Link para a categoria"
+
+#: ../monospace2/widgets.php:47
+msgid "Tag carousel"
+msgstr "Carrossel de Tags"
+
+#: ../monospace2/widgets.php:48
+msgid "Monospace2: Tag Carousel"
+msgstr "Monospace2: Carrossel de Tags"
+
+#: ../monospace2/functions.php:11
+msgid "Header Menu"
+msgstr "Menu do Cabeçalho"
+
+#: ../monospace2/functions.php:14
+msgid "Expandable Menu"
+msgstr "Menu Expandível"
+
+#: ../monospace2/functions.php:233
+msgid "Share"
+msgstr "Compartilhe"
+
+#: ../monospace2/functions.php:248
+#: ../monospace2/functions.php:317
+#: ../monospace2/functions.php:326
+msgid "Permalink to"
+msgstr "Link permanente para"
+
+#: ../monospace2/functions.php:273
+msgid "Category"
+msgstr "Categoria"
+
+#: ../monospace2/functions.php:275
+msgid "Tag"
+msgstr "Tag"
+
+#: ../monospace2/functions.php:277
+msgid "Archives"
+msgstr "Arquivos"
+
+#: ../monospace2/functions.php:292
+#, php-format
+msgid "Page %s"
+msgstr "Página %s"
+
+#: ../monospace2/comments.php:1
+msgid "No Comment"
+msgstr "Nenhum Comentário"
+
+#: ../monospace2/comments.php:1
+msgid "1 Comment"
+msgstr "1 Comentário"
+
+#: ../monospace2/comments.php:1
+msgid "% Comments"
+msgstr "% Comentários"
+
+#: ../monospace2/header.php:10
+#: ../monospace2/header.php:11
+msgid "Posts Feed"
+msgstr "Feed de Posts"
+
+#: ../monospace2/header.php:12
+msgid "Comments Feed"
+msgstr "Feed de Comentários"
+
+#: ../monospace2/header.php:43
+msgid "Monospace2 WordPress Theme"
+msgstr "Tema Monospace2 do WordPress"
+
+#: ../monospace2/header.php:43
+msgid "by"
+msgstr "por"
+
+#: ../monospace2/index.php:11
+msgid "No posts found"
+msgstr "Nenhum post encontrado"
+
+#: ../monospace2/footer.php:11
+msgid "Loading more posts..."
+msgstr "Carregando mais posts..."
+
+#: ../monospace2/options.php:40
+msgid "Style & Appearance"
+msgstr "Estilo e Aparência"
+
+#: ../monospace2/options.php:44
+msgid "Disable Titles"
+msgstr "Desabilitar Títulos"
+
+#: ../monospace2/options.php:45
+msgid "You can hide titles for categories that may not need it. The intention of this option is to give a timeline appearance to some kind of posts like tweets, pictures and videos. The side icon of these categories will still be visible."
+msgstr "Você pode esconder os títulos das categorias que os usam. A intenção desta opção é dar uma aparência de \"timeline\" para alguns tipos de post como tweets, fotos e vídeos. O ícone lateral destas categorias continuará aparecendo."
+
+#: ../monospace2/options.php:53
+msgid "Category Icons"
+msgstr "Ícones de Categorias"
+
+#: ../monospace2/options.php:110
+msgid "Select icon"
+msgstr "Selecione um ícone"
+
+#: ../monospace2/post.php:18
+msgid "Untitled"
+msgstr "Sem Título"
+
+#: ../monospace2/inc/options-framework.php:170
+#: ../monospace2/inc/options-framework.php:364
+msgid "Theme Options"
+msgstr "Opções do Tema"
+
+#: ../monospace2/inc/options-framework.php:238
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr "Clicke OK para limpar todas as opções. Todas as opções existentes serão perdidas!"
+
+#: ../monospace2/inc/options-framework.php:270
+msgid "Default options restored."
+msgstr "Opções padrão restauradas"
+
+#: ../monospace2/inc/options-framework.php:313
+msgid "Options saved."
+msgstr "Opções salvas."
+
+#: ../monospace2/inc/options-medialibrary-uploader.php:26
+msgid "Theme Options Media"
+msgstr "Mídia do Tema"
+
+#: ../monospace2/inc/options-medialibrary-uploader.php:129
+msgid "Upload"
+msgstr "Upload"
+
+#: ../monospace2/inc/options-medialibrary-uploader.php:152
+msgid "View File"
+msgstr "Ver Arquivo"
+
+#: ../monospace2/inc/options-medialibrary-uploader.php:289
+msgid "Gallery"
+msgstr "Galeria"
+
+#: ../monospace2/inc/options-medialibrary-uploader.php:289
+msgid "Previously Uploaded"
+msgstr "Enviadas"
+
+#: ../monospace2/inc/options-sanitize.php:232
+msgid "No Repeat"
+msgstr "Não Repetir"
+
+#: ../monospace2/inc/options-sanitize.php:233
+msgid "Repeat Horizontally"
+msgstr "Repetir Horizontalmente"
+
+#: ../monospace2/inc/options-sanitize.php:234
+msgid "Repeat Vertically"
+msgstr "Repetir Verticalmente"
+
+#: ../monospace2/inc/options-sanitize.php:235
+msgid "Repeat All"
+msgstr "Repetir Tudo"
+
+#: ../monospace2/inc/options-sanitize.php:248
+msgid "Top Left"
+msgstr "Topo Esquerdo"
+
+#: ../monospace2/inc/options-sanitize.php:249
+msgid "Top Center"
+msgstr "Centro do Topo"
+
+#: ../monospace2/inc/options-sanitize.php:250
+msgid "Top Right"
+msgstr "Topo Direito"
+
+#: ../monospace2/inc/options-sanitize.php:251
+msgid "Middle Left"
+msgstr "Centro da Esquerda"
+
+#: ../monospace2/inc/options-sanitize.php:252
+msgid "Middle Center"
+msgstr "Centro"
+
+#: ../monospace2/inc/options-sanitize.php:253
+msgid "Middle Right"
+msgstr "Centro da Direita"
+
+#: ../monospace2/inc/options-sanitize.php:254
+msgid "Bottom Left"
+msgstr "Fundo Esquerdo"
+
+#: ../monospace2/inc/options-sanitize.php:255
+msgid "Bottom Center"
+msgstr "Fundo Central"
+
+#: ../monospace2/inc/options-sanitize.php:256
+msgid "Bottom Right"
+msgstr "Fundo Direito"
+
+#: ../monospace2/inc/options-sanitize.php:269
+msgid "Scroll Normally"
+msgstr "Rolar Normalmente"
+
+#: ../monospace2/inc/options-sanitize.php:270
+msgid "Fixed in Place"
+msgstr "Fixar"
+
+#: ../monospace2/inc/options-sanitize.php:344
+msgid "Normal"
+msgstr "Normal"
+
+#: ../monospace2/inc/options-sanitize.php:345
+msgid "Italic"
+msgstr "Itálico"
+
+#: ../monospace2/inc/options-sanitize.php:346
+msgid "Bold"
+msgstr "Negrito"
+
+#: ../monospace2/inc/options-sanitize.php:347
+msgid "Bold Italic"
+msgstr "Negrito e Itálico"
+
