@@ -219,7 +219,11 @@ function monospace_meta () {
 
         <?php if ($categories) : ?>
             <?php foreach ($categories as $c) : ?>
-                <a class="categories icon16 category-icon-<?php echo $c->term_id; ?>-16" href="<?php echo get_category_link($c->term_id); ?>"><?php echo $c->name; ?></a>
+                <a class="categories icon16 category-icon-<?php echo $c->term_id; ?>-16"
+                    href="<?php echo get_category_link($c->term_id); ?>"
+                    title="<?php _e('Link to the category', 'monospace2'); ?> <?php echo $c->name; ?>">
+                    <?php echo $c->name; ?>
+                </a>
             <?php endforeach; ?>
         <?php endif; ?>
         <?php if ($tags) : ?><span class="tags icon12 tags-icon12"><?php the_tags('', ''); ?></span><?php endif; ?>
