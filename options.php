@@ -13,7 +13,7 @@ function optionsframework_custom_admin_scripts() {
 }
 
 function optionsframework_option_name() {
-    $themename = wp_get_theme(STYLESHEETPATH . '/style.css');
+    $themename = wp_get_theme();
     $themename = $themename['Name'];
     $themename = preg_replace("/\W/", "", strtolower($themename));
 
