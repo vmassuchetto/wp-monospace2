@@ -8,7 +8,7 @@
                 if ($show_title[$c->term_id])
                     $title_class = 'category-hidden category-hidden-' . $c->term_id;
         ?>
-        <a title="<?php printf(__('Link to the category $1', 'monospace2'), $c->name); ?>"
+        <a title="<?php _e('Link to the category', 'monospace2'); ?> <?php echo $c->name; ?>"
             href="<?php echo get_category_link($c->term_id); ?>"
             class="category-icon-<?php echo $c->term_id; ?>-48">
         </a>
