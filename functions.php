@@ -3,30 +3,16 @@
 define ('MONOSPACE_CREDITS_URL', 'http://vinicius.soylocoporti.org.br/monospace-wordpress-theme/');
 define ('MONOSPACE_DEFAULT_ICON', 'box_icon&');
 
-include (get_stylesheet_directory() . '/options.php');
 load_theme_textdomain ('monospace2', get_template_directory().'/lang');
 
+require_once(get_stylesheet_directory() . '/options.php');
+require_once(get_stylesheet_directory() . '/widgets.php');
+
+register_nav_menu('header', __('Header Menu', 'monospace2'));
+
 register_sidebar(array(
-	'name'          => __('Left Menu', 'monospace'),
-	'id'            => 'menu-left',
-	'description'   => '',
-	'before_widget' => '<div id="%1$s" class="widget %2$s">',
-	'after_widget'  => '</div>',
-	'before_title'  => '',
-	'after_title'   => ''
-));
-register_sidebar(array(
-	'name'          => __('Middle Menu', 'monospace2'),
-	'id'            => 'menu-middle',
-	'description'   => '',
-	'before_widget' => '<div id="%1$s" class="widget %2$s">',
-	'after_widget'  => '</div>',
-	'before_title'  => '',
-	'after_title'   => ''
-));
-register_sidebar(array(
-	'name'          => __('Right Menu', 'monospace2'),
-	'id'            => 'menu-right',
+	'name'          => __('Expandable Menu', 'monospace2'),
+	'id'            => 'expandable-menu',
 	'description'   => '',
 	'before_widget' => '<div id="%1$s" class="widget %2$s">',
 	'after_widget'  => '</div>',
@@ -145,6 +131,30 @@ function monospace_scroll_params() {
     return $params;
 }
 
+add_action('monospace_header_loaded', 'monospace_run_header_js');
+function monospace_run_header_js() {
+    ?>
+    <script type="text/javascript">
+        format_header();
+    </script>
+    <?php
+}
+
+add_action('monospace_post_loaded', 'monospace_run_post_js');
+function monospace_run_post_js($args) {
+    $defaults = array(
+        'post_id' => false
+    );
+    $args = wp_parse_args($args, $defaults);
+    if (!$args['post_id'])
+        return false;
+    ?>
+    <script type="text/javascript">
+        format_post('.post-<?php echo $args['post_id']; ?>');
+    </script>
+    <?php
+}
+
 add_action('wp_enqueue_scripts', 'monospace_enqueue_scripts');
 function monospace_enqueue_scripts() {
     if (is_singular()) wp_enqueue_script('comment-reply');
@@ -252,21 +262,6 @@ function monospace_meta () {
 
     </div>
     <?php
-}
-
-add_action('monospace_post_loaded', 'monospace_run_post_js');
-function monospace_run_post_js($args) {
-    $defaults = array(
-        'post_id' => false
-    );
-    $args = wp_parse_args($args, $defaults);
-    if (!$args['post_id'])
-        return false;
-    ?>
-    <script type="text/javascript">
-        format_post('.post-<?php echo $args['post_id']; ?>');
-    </script>
-    <?
 }
 
 function monospace_title ($mode = false) {

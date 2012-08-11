@@ -38,17 +38,7 @@ function format_post(post) {
 
 }
 
-jQuery(document).ready(function() {
-
-    jQuery('.nav-link').hover(function(){
-        jQuery(this).find('span').stop().fadeIn(200);
-    }, function() {
-        jQuery(this).find('span').stop().fadeOut(200);
-    });
-
-    jQuery('.entry h3, .entry h4, .entry h5, .entry h6').hover(function(){
-        jQuery(this).prev().fadeIn(200);
-    });
+function format_header() {
 
     jQuery('.menu-header-items li a').hoverIntent({
         timeout:150,
@@ -69,25 +59,27 @@ jQuery(document).ready(function() {
         }
     });
 
-    jQuery('.menu-categories').jcarousel({
-        'animation': 'slow',
-        'wrap': 'circular',
-        'itemFallbackDimension': 110
+    jQuery('.menu-icon24').toggle(function(e){
+        e.preventDefault();
+        menu_height = jQuery('.menu-inner').height() + 20;
+        jQuery('.menu-wrap')
+            .stop()
+            .animate({ height: '+=' + menu_height + 'px' }, 200);
+        jQuery(this).addClass('menu-icon24-toggled');
+    }, function(e){
+        e.preventDefault();
+        jQuery('.menu-wrap').animate({ height: '65px' }, 200);
+        jQuery(this).removeClass('menu-icon24-toggled');
     });
-    jQuery('.menu-tags').jcarousel({
-        'animation': 'slow',
-        'wrap': 'circular',
-        'scroll': 5,
-        'setupCallback': function(carousel) {
-            jQuery('.menu-tags a').each(function(){
-                item = jQuery(this);
-                w = item.css('font-size').replace('px', '')
-                    * item.html().length * 0.6;
-                item.parent().css('width', w + 'px');
-            });
-        }
-    });
+}
 
+jQuery(document).ready(function() {
+
+    jQuery('.nav-link').hover(function(){
+        jQuery(this).find('span').stop().fadeIn(200);
+    }, function() {
+        jQuery(this).find('span').stop().fadeOut(200);
+    });
 
     if (params.type) {
 
@@ -126,18 +118,5 @@ jQuery(document).ready(function() {
         });
 
     }
-
-    jQuery('.menu-icon24').toggle(function(e){
-        e.preventDefault();
-        menu_height = jQuery('.menu-inner').height() + 20;
-        jQuery('.menu-wrap')
-            .stop()
-            .animate({ height: '+=' + menu_height + 'px' }, 200);
-        jQuery(this).addClass('menu-icon24-toggled');
-    }, function(e){
-        e.preventDefault();
-        jQuery('.menu-wrap').animate({ height: '65px' }, 200);
-        jQuery(this).removeClass('menu-icon24-toggled');
-    });
 
 });
