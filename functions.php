@@ -144,7 +144,8 @@ function monospace_enqueue_scripts() {
     if (is_singular()) wp_enqueue_script('comment-reply');
     wp_enqueue_script('jquery');
     wp_enqueue_script('jquery-jcarousel', get_stylesheet_directory_uri() . '/js/jquery.jcarousel.min.js', array('jquery'));
-    wp_enqueue_script('monospace-scripts', get_stylesheet_directory_uri() . '/js/scripts.js', array('jquery', 'jquery-jcarousel'));
+    wp_enqueue_script('jquery-hoverintent', get_stylesheet_directory_uri() . '/js/jquery.hoverintent.min.js', array('jquery'));
+    wp_enqueue_script('monospace-scripts', get_stylesheet_directory_uri() . '/js/scripts.js', array('jquery', 'jquery-jcarousel', 'jquery-hoverintent'));
     wp_enqueue_script('addthis', 'http://s7.addthis.com/js/250/addthis_widget.js', false, false, true);
     $params = monospace_scroll_params();
     wp_localize_script('monospace-scripts', 'params', $params);

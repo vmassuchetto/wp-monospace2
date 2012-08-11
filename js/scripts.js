@@ -46,16 +46,31 @@ jQuery(document).ready(function() {
         jQuery(this).find('span').stop().fadeOut(200);
     });
 
-    jQuery('.comment-author img').hover(function(){
-        jQuery(this).next('.fn').stop().fadeIn(200);
-    });
-
     jQuery('.entry h3, .entry h4, .entry h5, .entry h6').hover(function(){
         jQuery(this).prev().fadeIn(200);
     });
 
     var menu_height;
-    menu_height = 300;
+    menu_height = jQuery('.menu-inner div').height();
+
+    jQuery('.menu-header-items li a').hoverIntent({
+        timeout:150,
+        over: function(){
+            jQuery(this).parent('li').find('ul:first')
+                .stop()
+                .slideDown(100)
+                .css('overflow', 'visible');
+        },
+        out: function() { }
+    });
+
+    jQuery('.menu-header-items ul li ul').hoverIntent({
+        timeout:300,
+        over: function() { },
+        out: function(){
+            jQuery(this).slideUp(100);
+        }
+    });
 
     jQuery('.menu-icon24').toggle(function(e){
         e.preventDefault();
