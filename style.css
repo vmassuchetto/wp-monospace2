@@ -585,21 +585,39 @@ h2.category-hidden {
 .entry h2, h3, h4, h5 {
     margin:20px 0 10px 0;
 }
-.entry
-.entry .aligncenter, div.aligncenter {
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+.aligncenter {
     text-align:center;
+    display:block;
     margin:10px auto;
 }
-.entry .alignleft {
+.alignleft {
     float: left;
     margin:10px 15px 10px 0;
 }
-.entry .alignright {
+.alignright {
     float: right;
     margin:10px 0 10px 15px;
 }
-.entry .alignnone {
-    margin:10px 0;
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
 }
 .entry .gallery, .wp-caption {
     text-align:center;
@@ -619,6 +637,9 @@ h2.category-hidden {
     margin:0 auto;
     padding:0;
     height:auto;
+}
+.entry .gallery {
+    border-radius:5px;
 }
 .entry .gallery:hover, .wp-caption:hover {
     background:#E5E5E5;
