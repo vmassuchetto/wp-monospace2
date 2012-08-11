@@ -15,7 +15,7 @@
 
 <body <?php if (function_exists('body_class')) body_class(); ?>>
 
-<div id="wrap" style="width:<?php echo $content_width; ?>px;">
+<div id="wrap">
 
     <?php monospace_navigation(); ?>
 

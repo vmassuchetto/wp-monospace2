@@ -22,7 +22,7 @@ register_sidebar(array(
 
 global $content_width;
 if (!isset($content_width))
-    $content_width = 900;
+    $content_width = 690;
 
 add_theme_support('automatic-feed-links');
 
