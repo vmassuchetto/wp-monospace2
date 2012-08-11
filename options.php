@@ -42,9 +42,9 @@ function optionsframework_options() {
 
     $options[] = array(
         'name' => __('Disable Titles', 'monospace2'),
-        'desc' => __('You can disable titles for some categories that may not need it.', 'monospace2'),
+        'desc' => __('You can hide titles for categories that may not need it. The intention of this option is to give a timeline appearance to some kind of posts like tweets, pictures and videos. The side icon of these categories will still be visible.', 'monospace2'),
         'id' => 'show_category_title',
-        'std' => $categories_multicheck,
+        'std' => array(),
         'type' => 'multicheck',
         'options' => $categories_multicheck
     );
