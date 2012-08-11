@@ -37,6 +37,9 @@ register_sidebar(array(
 global $content_width;
 if (!isset($content_width))
     $content_width = 900;
+
+add_theme_support('automatic-feed-links');
+
 add_filter('the_content', 'monospace_wpautop');
 add_filter('the_content', 'monospace_wpautop');
 function monospace_wpautop($content) {
