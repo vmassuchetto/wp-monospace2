@@ -536,38 +536,12 @@ input:hover, textarea:hover {
 #cancel-comment-reply-link:hover {
     background-image:url('img/cancel-icon12-hover.png');
 }
-
-.comment-icon16 {
-    background-image:url('img/comment-icon16.png');
-}
-.comment-icon16:hover {
-    background-image:url('img/comment-icon16-hover.png');
-}
-.facebook-icon16 {
-    background-image:url('img/facebook-icon16.png');
-}
-.facebook-icon16:hover {
-    background-image:url('img/facebook-icon16-hover.png');
-}
-.twitter-icon16 {
-    background-image:url('img/twitter-icon16.png');
-}
-.twitter-icon16:hover {
-    background-image:url('img/twitter-icon16-hover.png');
-}
-.google-icon16 {
-    background-image:url('img/google-icon16.png');
-}
-.google-icon16:hover {
-    background-image:url('img/google-icon16-hover.png');
-}
 .share-icon16 {
     background-image:url('img/share-icon16.png');
 }
 .share-icon16:hover {
     background-image:url('img/share-icon16-hover.png');
 }
-
 .share {
     display:none;
     margin:10px 0;
