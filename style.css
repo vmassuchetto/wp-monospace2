@@ -91,7 +91,9 @@ input:hover, textarea:hover {
 #cancel-comment-reply-link,
 .post-edit-link,
 .pingback .comment-author a,
-.entry a.content-anchor {
+.entry a.content-anchor,
+.menu-header-items .rss_item a
+{
     padding:2px 4px 2px 20px;
     background-repeat:no-repeat;
     background-position:4px center;
@@ -101,7 +103,9 @@ input:hover, textarea:hover {
 #cancel-comment-reply-link:hover,
 .post-edit-link:hover,
 .pingback .comment-author a:hover,
-.entry a.content-anchor:hover {
+.entry a.content-anchor:hover,
+.menu-header-items .rss_item a:hover
+{
     padding:2px 4px 2px 20px;
     background-repeat:no-repeat;
     background-position:4px center;
@@ -232,7 +236,6 @@ input:hover, textarea:hover {
     top:38px;
     right:15px;
     z-index:3;
-    width:550px;
 }
 .menu-header-items a {
     color:#444444;
@@ -255,6 +258,7 @@ input:hover, textarea:hover {
     list-style-type:none;
     overflow:visible;
     z-index:3;
+    margin:0 2px;
 }
 .menu-header-items li ul {
     display:none;
@@ -272,13 +276,25 @@ input:hover, textarea:hover {
 .menu-header-items li ul li {
     line-height:25px;
 }
+.menu-header-items .rss_item a {
+    background-image:url('img/rss-icon12.png');
+    background-repeat:no-repeat;
+    background-position:right center;
+    padding:2px 18px 2px 4px;
+}
+.menu-header-items .rss_item a:hover {
+    background-image:url('img/rss-icon12-hover.png');
+    background-repeat:no-repeat;
+    background-position:right center;
+    padding:2px 18px 2px 4px;
+}
 .menu-wrap {
     height:65px;
     overflow:hidden;
     position:relative;
 }
 .menu-inner {
-    padding:70px 20px 0px;
+    padding:60px 20px 0px;
     position:relative;
 }
 .menu-icon24-wrap {
@@ -309,7 +325,7 @@ input:hover, textarea:hover {
 .menu-icon24-toggled:hover {
     background: transparent url('img/up-icon24.png') no-repeat center center;
 }
-.menu-item {
+.jcarousel-list .menu-item {
     width:110px;
     height:90px;
     text-align:center;
