@@ -337,21 +337,26 @@ input:hover, textarea:hover {
     overflow:hidden;
     margin:0 auto !important;
 }
+.menu-tags .jcarousel-prev,
+.menu-tags .jcarousel-next {
+    top:25%;
+}
 .menu-tags ul {
     width:9999px !important;
-    padding:15px 0;
 }
 .menu-tags li {
     float:left;
     text-align:center;
     width:100px;
-    height:28px;
-    line-height:28px;
+    height:35px;
+    line-height:35px;
     vertical-align:middle;
 }
 .menu-tags .jcarousel-clip {
     width:770px;
     padding:15px 0;
+    height:35px;
+    line-height:35px;
     overflow:hidden;
     margin:0 auto;
 }

@@ -50,9 +50,6 @@ jQuery(document).ready(function() {
         jQuery(this).prev().fadeIn(200);
     });
 
-    var menu_height;
-    menu_height = jQuery('.menu-inner div').height();
-
     jQuery('.menu-header-items li a').hoverIntent({
         timeout:150,
         over: function(){
@@ -70,16 +67,6 @@ jQuery(document).ready(function() {
         out: function(){
             jQuery(this).slideUp(100);
         }
-    });
-
-    jQuery('.menu-icon24').toggle(function(e){
-        e.preventDefault();
-        jQuery('.menu-wrap').stop().animate({ height: '+=' + menu_height + 'px' }, 200);
-        jQuery(this).addClass('menu-icon24-toggled');
-    }, function(e){
-        e.preventDefault();
-        jQuery('.menu-wrap').animate({ height: '65px' }, 200);
-        jQuery(this).removeClass('menu-icon24-toggled');
     });
 
     jQuery('.menu-categories').jcarousel({
@@ -139,5 +126,18 @@ jQuery(document).ready(function() {
         });
 
     }
+
+    jQuery('.menu-icon24').toggle(function(e){
+        e.preventDefault();
+        menu_height = jQuery('.menu-inner').height() + 20;
+        jQuery('.menu-wrap')
+            .stop()
+            .animate({ height: '+=' + menu_height + 'px' }, 200);
+        jQuery(this).addClass('menu-icon24-toggled');
+    }, function(e){
+        e.preventDefault();
+        jQuery('.menu-wrap').animate({ height: '65px' }, 200);
+        jQuery(this).removeClass('menu-icon24-toggled');
+    });
 
 });
