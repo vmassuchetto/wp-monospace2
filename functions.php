@@ -34,8 +34,9 @@ register_sidebar(array(
 	'after_title'   => ''
 ));
 
-remove_filter( 'the_content', 'wpautop' );
-remove_filter( 'the_excerpt', 'wpautop' );
+global $content_width;
+if (!isset($content_width))
+    $content_width = 900;
 add_filter('the_content', 'monospace_wpautop');
 add_filter('the_content', 'monospace_wpautop');
 function monospace_wpautop($content) {
