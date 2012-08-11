@@ -1,4 +1,3 @@
-
 Monospace WordPress Theme
 -------------------------
 
@@ -23,6 +22,7 @@ Features
   a timeline appearance
 * Trackbacks and comments styling
 
+
 Icons
 -----
 
@@ -36,6 +36,7 @@ the file name follow the pattern `<any name>&<size>.png` with a hover version
 
 The default icons of the theme are from the [Mono Icon
 Set](http://gentleface.com/free_icon_set.html), created by Gentleface.
+
 
 Links
 -----
