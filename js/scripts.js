@@ -4,7 +4,7 @@ function center_element(e) {
     if (p.length <= 0)
         return false;
 
-    if (p.siblings('p').length > 1)
+    if (p.prev('p').length > 0 && p.next('p').length > 0)
         p.css('text-align', 'center');
 
 }
