@@ -225,7 +225,7 @@ function monospace_meta () {
         <?php if ($tags) : ?><span class="tags icon12 tags-icon12"><?php the_tags('', ''); ?></span><?php endif; ?>
 
         <?php edit_post_link(); ?>
-        <a class="icon16 link-internal-icon12" href="<?php echo get_permalink($post->ID); ?>"></a>
+        <a class="icon16 link-internal-icon12" href="<?php echo get_permalink($post->ID); ?>" title="<?php _e('Permalink to', 'monospace2'); ?> <?php the_title(); ?>"></a>
 
         <?php $addthis = 'addthis:url="' . get_permalink($post->ID) . '" addthis:title="' . get_the_title($post->ID) . '"'; ?>
         <div class="share">
