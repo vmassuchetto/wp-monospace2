@@ -40,6 +40,8 @@ if (!isset($content_width))
 
 add_theme_support('automatic-feed-links');
 
+remove_filter('the_content', 'wpautop');
+remove_filter('the_excerpt', 'wpautop');
 add_filter('the_content', 'monospace_wpautop');
 add_filter('the_content', 'monospace_wpautop');
 function monospace_wpautop($content) {
