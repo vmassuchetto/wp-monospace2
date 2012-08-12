@@ -30,22 +30,19 @@ Monospace2 reads the `icon` directory in the theme root and gives you the
 option to associate them with categories, so they will be displayed in the side
 of the posts that have that category assigned.
 
-Any icon in the `icon` directory will be interpreted by Monospace2 as long as
-the file name follow the pattern `<any name>&<size>.png` with a hover version
-`<any name>&<size>-hover.png`.
 
 The default icons of the theme are from the [Brightmix Icon
 Set](http://www.iconfinder.com/search/?q=iconset%3Abrightmix), licensed under
-the WTPL License (GPL compatible).
 
 
 Links
 -----
 
-* [Theme Author: Vinicius Massuchetto](http://vinicius.soylocoporti.org.br)
+* [Author: Vinicius Massuchetto](http://vinicius.soylocoporti.org.br)
 * [Theme Page](http://vinicius.soylocoporti.org.br/monospace2-wordpress-theme)
-* [Trac Tickets](http://themes.trac.wordpress.org/query?keywords=~theme-monospace)
-* [Theme SVN](http://themes.svn.wordpress.org/monospace/)
+* [GitHub Repository](https://github.com/vmassuchetto/wordpress-monospace2)
+* [WordPress.org SVN](http://themes.svn.wordpress.org/monospace2/2.00/)
+* [Trac Tickets](http://themes.trac.wordpress.org/query?keywords=~theme-monospace2)
 
 
 Changelog
