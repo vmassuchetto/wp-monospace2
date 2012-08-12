@@ -30,6 +30,14 @@ Monospace2 reads the `icon` directory in the theme root and gives you the
 option to associate them with categories, so they will be displayed in the side
 of the posts that have that category assigned.
 
+To make any icon to be interpreted by Monospace2 and appear on the options
+menu, create these files with the `<any name>` prefix you want, and put them in
+the `icon` directory.
+
+* <any name>&16.png
+* <any name>&16-hover.png
+* <any name>&48.png
+* <any name>&48-hover.png
 
 The default icons of the theme are from the [Brightmix Icon
 Set](http://www.iconfinder.com/search/?q=iconset%3Abrightmix), licensed under
