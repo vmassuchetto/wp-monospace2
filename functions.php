@@ -1,7 +1,7 @@
 <?php
 
 define ('MONOSPACE_CREDITS_URL', 'http://vinicius.soylocoporti.org.br/monospace-wordpress-theme/');
-define ('MONOSPACE_DEFAULT_ICON', 'box_icon&');
+define ('MONOSPACE_DEFAULT_ICON', 'document&');
 
 load_theme_textdomain ('monospace2', get_template_directory().'/lang');
 
@@ -203,7 +203,6 @@ function monospace_get_icons() {
 
         $name = preg_replace('#&.*#', '', $file);
         $name = preg_replace('#[^0-9A-Za-z]#', ' ', $name);
-        $name = preg_replace('#icon#', ' ', $name);
         $name = ucwords(trim(preg_replace('#png$#', ' ', $name)));
         $icons[] = array(
             'name' => $name,

@@ -34,8 +34,9 @@ Any icon in the `icon` directory will be interpreted by Monospace2 as long as
 the file name follow the pattern `<any name>&<size>.png` with a hover version
 `<any name>&<size>-hover.png`.
 
-The default icons of the theme are from the [Mono Icon
-Set](http://gentleface.com/free_icon_set.html), created by Gentleface.
+The default icons of the theme are from the [Brightmix Icon
+Set](http://www.iconfinder.com/search/?q=iconset%3Abrightmix), licensed under
+the WTPL License (GPL compatible).
 
 
 Links
