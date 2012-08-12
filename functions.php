@@ -167,8 +167,25 @@ function monospace_enqueue_scripts() {
     wp_localize_script('monospace-scripts', 'params', $params);
 }
 
-add_action('wp_head', 'monospace_head');
-function monospace_head() {
+add_action('wp_head', 'monospace_share_head');
+function monospace_share_head() {
+    global $post;
+    $post_img = false;
+    if (preg_match('#<img.*src=["\'](.*)["\']#siU', apply_filters('the_content', $post->post_content), $matches))
+        $post_img = $matches[1];
+    ?>
+    <meta property="og:title" content="<?php echo apply_filters('the_title', $post->post_title); ?>" />
+    <meta property="og:url" content="<?php echo get_permalink($post->ID); ?>" />
+    <?php if ($post_img) : ?>
+        <meta property="og:image" content="<?php echo $post_img; ?>" />
+    <?php endif; ?>
+    <meta property="og:site_name" content="<?php echo get_bloginfo('name'); ?>" />
+    <meta property="og:description" content="<?php echo get_bloginfo('description'); ?>" />
+    <?php
+}
+
+add_action('wp_head', 'monospace_category_css');
+function monospace_category_css() {
     $styles = array();
     $icons_base = get_stylesheet_directory_uri() . '/icon/';
     $categories = get_categories();
