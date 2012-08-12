@@ -52,4 +52,4 @@ Changelog
 ---------
 
 * 2.00
-  - First release to get reviewers feedback.
+  - First release to get feedback from theme reviewers.
