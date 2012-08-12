@@ -41,6 +41,7 @@ the `icon` directory.
 
 The default icons of the theme are from the [Brightmix Icon
 Set](http://www.iconfinder.com/search/?q=iconset%3Abrightmix), licensed under
+the WTFPL License (GPL compatible).
 
 
 Links
