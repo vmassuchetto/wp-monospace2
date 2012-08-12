@@ -1,6 +1,6 @@
 <?php
 
-define ('MONOSPACE_CREDITS_URL', 'http://vinicius.soylocoporti.org.br/monospace-wordpress-theme/');
+define ('MONOSPACE_CREDITS_URL', 'http://vinicius.soylocoporti.org.br/monospace2-wordpress-theme/');
 define ('MONOSPACE_DEFAULT_ICON', 'document&');
 
 load_theme_textdomain ('monospace2', get_template_directory().'/lang');
