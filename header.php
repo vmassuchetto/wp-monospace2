@@ -40,7 +40,7 @@
         <div class="menu-wrap">
             <div class="menu-inner">
                 <?php dynamic_sidebar('expandable-menu'); ?>
-                <p class="credits"><a href="<?php echo MONOSPACE_CREDITS_URL; ?>"><?php _e('Monospace2 WordPress Theme', 'monospace2'); ?></a> <?php _('by', 'monospace2'); ?> Vinicius Massuchetto</a>
+                <p class="credits"><a href="<?php echo MONOSPACE_CREDITS_URL; ?>"><?php _e('Monospace2 WordPress Theme', 'monospace2'); ?></a> <?php _e('by', 'monospace2'); ?> Vinicius Massuchetto</a>
             </div>
         </div>
 
