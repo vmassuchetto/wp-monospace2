@@ -54,6 +54,16 @@ Links
 * [Trac Tickets](http://themes.trac.wordpress.org/query?keywords=~theme-monospace2)
 
 
+Roadmap
+-------
+* Pre-load hover images, so hovering icons will instantly show their hover
+  version
+* Check why WP-Markdown pretty syntax hightligh is not working in home and
+  archives
+* Separate comments and pingbacks
+* Add share tags in <head>
+
+
 Changelog
 ---------
 
