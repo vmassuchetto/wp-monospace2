@@ -167,21 +167,61 @@ function monospace_enqueue_scripts() {
     wp_localize_script('monospace-scripts', 'params', $params);
 }
 
+function monospace_strlimit($str, $limit = 100, $sufix = '[...]') {
+
+    $c = 0;
+    $limited = array();
+    $str = preg_replace('#\s+#', ' ', $str);
+    $str = explode(' ', strip_tags($str));
+
+    for ($i = 0; $i < count($str); $i++) {
+        if (($c += strlen($str[$i])) > $limit)
+            break;
+        $limited[] = $str[$i];
+    }
+
+    if ($c > $limit)
+        $limited[] = ' ' . $sufix;
+
+    return implode(' ', $limited);
+}
+
 add_action('wp_head', 'monospace_share_head');
 function monospace_share_head() {
     global $post;
+    if (!$post)
+        return false;
+    $properties = array();
     $post_img = false;
+
+    $properties['og:site_name'] = get_bloginfo('name');
+    $properties['og:title'] = apply_filters('the_title', $post->post_title);
+    $properties['og:url'] = get_permalink($post->ID);
+
     if (preg_match('#<img.*src=["\'](.*)["\']#siU', apply_filters('the_content', $post->post_content), $matches))
         $post_img = $matches[1];
-    ?>
-    <meta property="og:title" content="<?php echo apply_filters('the_title', $post->post_title); ?>" />
-    <meta property="og:url" content="<?php echo get_permalink($post->ID); ?>" />
-    <?php if ($post_img) : ?>
-        <meta property="og:image" content="<?php echo $post_img; ?>" />
-    <?php endif; ?>
-    <meta property="og:site_name" content="<?php echo get_bloginfo('name'); ?>" />
-    <meta property="og:description" content="<?php echo get_bloginfo('description'); ?>" />
-    <?php
+    $post_excerpt = (has_excerpt($post->ID)) ? $post->post_excerpt : $post->post_content;
+
+    $properties['og:description'] = monospace_strlimit($post_excerpt);
+    if ($post_img)
+        $properties['og:image'] = $post_img;
+
+    $regex = '#.*https?://.*\.youtu\.?be.*(?:watch)?.*v=([A-Za-z0-9]+).*#si';
+    if (preg_match($regex, $post->post_content, $matches)) {
+        $video_id = $matches[1];
+        $properties['og:type'] = 'video';
+        $properties['og:image'] = 'http://i4.ytimg.com/vi/' . $video_id . '/default.jpg';
+        $properties['og:video'] = 'http://youtube.com/v/' . $video_id;
+        $properties['og:video:width'] = 384;
+        $properties['og:video:height'] = 264;
+    }
+
+    foreach ($properties as $k => $v) {
+        ?>
+        <meta property="<?php echo $k; ?>" content="<?php echo $v; ?>" />
+        <?php
+    }
+
 }
 
 add_action('wp_head', 'monospace_category_css');
