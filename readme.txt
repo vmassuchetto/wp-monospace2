@@ -56,6 +56,7 @@ Links
 
 Roadmap
 -------
+* Support JSless browsing
 * Pre-load hover images, so hovering icons will instantly show their hover
   version
 * Check why WP-Markdown pretty syntax hightligh is not working in home and
