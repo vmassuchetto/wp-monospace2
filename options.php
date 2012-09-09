@@ -34,8 +34,6 @@ function optionsframework_options() {
     foreach ($categories as $c)
         $categories_multicheck[$c->term_id] = '&nbsp;' . $c->name;
 
-    /* Menu Style */
-
     $options[] = array(
         'name' => __('Style & Appearance', 'monospace2'),
         'type' => 'heading');

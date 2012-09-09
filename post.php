@@ -25,7 +25,6 @@
 
         <?php monospace_meta(); ?>
         <?php comments_template(); ?>
-
     </div>
 
 </div>
