@@ -82,12 +82,12 @@ function monospace_infinite_scroll() {
         return false;
 
     $defaults = array(
-        'action' => 'infinite_scroll',
+        'action' => 'monospace_infinite_scroll',
         'type' => false,
         'type_id' => false,
         'page' => false
     );
-    $args = wp_parse_args($_REQUEST, $defaults);
+    $args = wp_parse_args($_POST, $defaults);
 
     if (!$args['action'] || !$args['page'] || !$args['type'])
         return false;
@@ -106,9 +106,7 @@ function monospace_infinite_scroll() {
             get_template_part('post');
         }
     }
-
-    exit();
-
+    exit;
 }
 
 function monospace_post_category($post_id) {

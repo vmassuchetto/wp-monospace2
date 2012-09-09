@@ -99,8 +99,8 @@ jQuery(document).ready(function() {
 
         jQuery(window).scroll(function () {
 
-            if (jQuery(window).scrollTop() ==
-                jQuery(document).height() - jQuery(window).height()) {
+            if (jQuery(window).scrollTop() >
+                jQuery(document).height() - jQuery(window).height() - 60) {
 
                     if (params.scrolling)
                         return false;
@@ -111,9 +111,9 @@ jQuery(document).ready(function() {
                         jQuery('.infinite-scroll-wrap').animate({ height: '+=60px' }, 200);
                     jQuery.ajax({
                         url: location.href,
-                        type: 'GET',
+                        type: 'POST',
                         data: {
-                            action: 'infinite_scroll',
+                            action: 'monospace_infinite_scroll',
                             type: params.type,
                             type_id: params.type_id,
                             page: page
