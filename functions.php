@@ -69,8 +69,10 @@ function monospace_views_count_get($short = true) {
     if (!$count = get_post_meta($post->ID, '_monospace_views_count', true))
         $count = 0;
 
-    if ($short && $count >= 1000)
-        $count = sprintf('%.1fk', $count / 1000);
+    if ($short && $count >= 1000000)
+        $count = sprintf('%.2fM', $count / 1000000);
+    elseif ($short && $count >= 1000)
+        $count = sprintf('%.2fk', $count / 1000);
 
     return $count;
 }
@@ -328,7 +330,7 @@ function monospace_meta () {
         <?php if (of_get_option('views_count')) : ?>
             <a class="icon16 views-icon12"
                 href="<?php the_permalink(); ?>"
-                title="<?php printf(__('This post was viewed %s times', 'monospace2'), monospace_views_count_get()); ?>"><?php echo monospace_views_count_get(); ?></a>
+                title="<?php printf(__('This post was viewed %s times', 'monospace2'), monospace_views_count_get(false)); ?>"><?php echo monospace_views_count_get(); ?></a>
         <?php endif; ?>
 
         <?php if ($categories) : ?>
