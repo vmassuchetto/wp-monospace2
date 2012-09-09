@@ -1,3 +1,14 @@
+function views_count(post_id) {
+    jQuery.ajax({
+        url: location.href,
+        type: 'POST',
+        data: {
+            action: 'monospace_views_count',
+            post_id: post_id
+        }
+    });
+}
+
 function center_element(e) {
 
     p = jQuery(e).parents('p');

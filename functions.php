@@ -39,6 +39,42 @@ function monospace_ensure_oembed($content) {
     return preg_replace('/^\s*<[^>]*>(http.*)<[^>]*>\s*$/im', '\1' . "\n", $content);
 }
 
+add_action('init', 'monospace_views_count');
+function monospace_views_count() {
+
+    if (is_admin())
+        return false;
+
+    $defaults = array(
+        'action' => 'monospace_views_count',
+        'post_id' => false
+    );
+    $args = wp_parse_args($_POST, $defaults);
+
+    if (!$post_id = intval($args['post_id']))
+        return false;
+
+    if (!$count = get_post_meta($post_id, '_monospace_views_count', true))
+        $count = 0;
+
+    $count++;
+    update_post_meta($post_id, '_monospace_views_count', $count);
+    exit;
+}
+
+function monospace_views_count_get($short = true) {
+    global $post;
+    if (empty($post->ID))
+        return 0;
+    if (!$count = get_post_meta($post->ID, '_monospace_views_count', true))
+        $count = 0;
+
+    if ($short && $count >= 1000)
+        $count = sprintf('%.1fk', $count / 1000);
+
+    return $count;
+}
+
 add_action('init', 'monospace_infinite_scroll');
 function monospace_infinite_scroll() {
 
@@ -151,6 +187,9 @@ function monospace_run_post_js($args) {
     ?>
     <script type="text/javascript">
         format_post('.post-<?php echo $args['post_id']; ?>');
+        <?php if (of_get_option('views_count')) : ?>
+            views_count(<?php echo $args['post_id']; ?>);
+        <?php endif; ?>
     </script>
     <?php
 }
@@ -288,6 +327,11 @@ function monospace_meta () {
 
         <a class="icon16 star-icon12 share-button" rel="<?php echo $post->ID; ?>" href="#"><?php _e('Share', 'monospace2'); ?></a>
         <a class="icon16 comment-icon12" href="<?php comments_link(); ?>"><?php comments_number('0', '1', '%'); ?></a>
+        <?php if (of_get_option('views_count')) : ?>
+            <a class="icon16 views-icon12"
+                href="<?php the_permalink(); ?>"
+                title="<?php printf(__('This post was viewed %s times', 'monospace2'), monospace_views_count_get()); ?>"><?php echo monospace_views_count_get(); ?></a>
+        <?php endif; ?>
 
         <?php if ($categories) : ?>
             <?php foreach ($categories as $c) : ?>

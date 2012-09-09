@@ -593,6 +593,12 @@ table tbody tr:hover th {
 .comment-icon12:hover {
     background-image:url('img/comment-icon12-hover.png');
 }
+.views-icon12 {
+    background-image:url('img/views-icon12.png');
+}
+.views-icon12:hover {
+    background-image:url('img/views-icon12-hover.png');
+}
 .categories-icon12 {
     background-image:url('img/categories-icon12.png');
 }
