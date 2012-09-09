@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Monospace2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-11 19:49-0300\n"
-"PO-Revision-Date: 2012-08-11 19:49-0300\n"
+"POT-Creation-Date: 2012-09-09 00:31-0300\n"
+"PO-Revision-Date: 2012-09-09 00:31-0300\n"
 "Last-Translator: Vinicius Massuchetto <viniciusmassuchetto@gmail.com>\n"
 "Language-Team: Vinicus Massuchetto\n"
 "Language: \n"
@@ -23,7 +23,7 @@ msgid "Monospace2: Category Carousel"
 msgstr ""
 
 #: ../widgets.php:18
-#: ../functions.php:240
+#: ../functions.php:340
 #: ../post.php:11
 msgid "Link to the category"
 msgstr ""
@@ -44,29 +44,34 @@ msgstr ""
 msgid "Expandable Menu"
 msgstr ""
 
-#: ../functions.php:233
+#: ../functions.php:328
 msgid "Share"
 msgstr ""
 
-#: ../functions.php:248
-#: ../functions.php:317
-#: ../functions.php:326
+#: ../functions.php:333
+#, php-format
+msgid "This post was viewed %s times"
+msgstr ""
+
+#: ../functions.php:348
+#: ../functions.php:417
+#: ../functions.php:426
 msgid "Permalink to"
 msgstr ""
 
-#: ../functions.php:273
+#: ../functions.php:373
 msgid "Category"
 msgstr ""
 
-#: ../functions.php:275
+#: ../functions.php:375
 msgid "Tag"
 msgstr ""
 
-#: ../functions.php:277
+#: ../functions.php:377
 msgid "Archives"
 msgstr ""
 
-#: ../functions.php:292
+#: ../functions.php:392
 #, php-format
 msgid "Page %s"
 msgstr ""
@@ -108,23 +113,35 @@ msgstr ""
 msgid "Loading more posts..."
 msgstr ""
 
-#: ../options.php:40
+#: ../options.php:38
 msgid "Style & Appearance"
 msgstr ""
 
-#: ../options.php:44
+#: ../options.php:42
 msgid "Disable Titles"
 msgstr ""
 
-#: ../options.php:45
+#: ../options.php:43
 msgid "You can hide titles for categories that may not need it. The intention of this option is to give a timeline appearance to some kind of posts like tweets, pictures and videos. The side icon of these categories will still be visible."
 msgstr ""
 
-#: ../options.php:53
+#: ../options.php:51
 msgid "Category Icons"
 msgstr ""
 
-#: ../options.php:110
+#: ../options.php:64
+msgid "Features"
+msgstr ""
+
+#: ../options.php:68
+msgid "Enable Posts Views Count"
+msgstr ""
+
+#: ../options.php:69
+msgid "Will enable a views counter for every post and display it in the meta section."
+msgstr ""
+
+#: ../options.php:119
 msgid "Select icon"
 msgstr ""
 

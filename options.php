@@ -66,8 +66,7 @@ function optionsframework_options() {
 
 	$options[] = array(
         'name' => __('Enable Posts Views Count', 'monospace2'),
-        'desc' => '&nbsp;' . __('Will enable a views counter for every post
-            and display it in the meta section.', 'monospace2'),
+        'desc' => '&nbsp;' . __('Will enable a views counter for every post and display it in the meta section.', 'monospace2'),
         'id' => 'views_count',
         'std' => '0',
         'type' => 'checkbox');
